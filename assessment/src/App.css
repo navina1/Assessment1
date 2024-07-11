@@ -1,11 +1,13 @@
 .App {
   text-align: center;
+  padding-left: 4rem;
 }
 
 .App-header {
   background-color:white;
   padding: 20px;
   color: #282c34;
+  text-align: left;
 }
 
 .value {
@@ -23,7 +25,7 @@
 
 .App-nav {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   background-color:white;
   padding: 10px;
 }
@@ -35,9 +37,11 @@
 }
 
 .App-nav a.active {
-  font-weight: bold;
+  font-weight: 500;
+  border-bottom: 4px solid rgb(102, 102, 213);
 }
 
 .chart-container {
   padding: 20px;
 }
+
