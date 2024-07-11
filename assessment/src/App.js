@@ -1,24 +1,33 @@
-import logo from './logo.svg';
+import {  BrowserRouter as Router, Route, NavLink, Routes}  from "react-router-dom";
 import './App.css';
+import ChartPage from "./components/ChartPage";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <header className="App-header">
+          <h1>
+            <span className="value">63,179.71</span>
+            <span className="currency"> USD</span>
+          </h1>
+          <p className="change">+2,161.42 (3.54%)</p>
+        </header>
+        <nav className="App-nav">
+          <NavLink to="/summary">Summary</NavLink>
+          <NavLink to="/chart">Chart</NavLink>
+          <NavLink to="/statistics">Statistics</NavLink>
+          <NavLink to="/analysis">Analysis</NavLink>
+          <NavLink to="/settings">Settings</NavLink>
+        </nav>
+        <main>
+          <Routes>
+            <Route path="/chart" element={<ChartPage />} />
+            {/* Add other routes here */}
+          </Routes>
+        </main>
+      </div>
+    </Router>
   );
 }
 
