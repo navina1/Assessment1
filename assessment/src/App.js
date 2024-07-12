@@ -1,9 +1,9 @@
-import { BrowserRouter as Router, Route, NavLink, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, NavLink, Routes, Navigate } from "react-router-dom";
 import './App.css';
 import { useState } from "react";
 import ChartPage from "./components/ChartPage";
-import FullscrnImg from "./images/expand.jpeg"
-import compareImg from "./images/add.jpeg"
+import FullscrnImg from "./images/expand.jpeg";
+import compareImg from "./images/add.jpeg";
 
 function App() {
   const [isFullScreen, setIsFullScreen] = useState(false);
@@ -16,6 +16,7 @@ function App() {
   const handleClick = (id) => {
     setActiveButton(id);
   };
+
   return (
     <Router>
       <div className="App">
@@ -91,10 +92,10 @@ function App() {
               max
             </button>
           </div>
-
         </div>
         <main>
           <Routes>
+            <Route path="/" element={<Navigate to="/chart" />} />
             <Route path="/chart" element={<ChartPage isFullScreen={isFullScreen} toggleFullScreen={toggleFullScreen} />} />
             {/* Add other routes here */}
           </Routes>
