@@ -11,6 +11,11 @@ function App() {
   const toggleFullScreen = () => {
     setIsFullScreen(!isFullScreen);
   };
+  const [activeButton, setActiveButton] = useState('1d');
+
+  const handleClick = (id) => {
+    setActiveButton(id);
+  };
   return (
     <Router>
       <div className="App">
@@ -38,37 +43,56 @@ function App() {
 
           <div style={{ display: "flex", justifyContent: "flex-start", marginLeft: "1.5rem", marginTop: "2rem" }}>
             <img src={compareImg} style={{ height: "12px", width: "12px", marginTop: "5px" }} />
-            <button className='fullScrn-btn'>
+            <button className='fullScrn-btn' onClick={toggleFullScreen}>
               Compare
             </button>
           </div>
           <div className='days-select'>
-            <button className='days-btn'>
+            <button
+              className={`days-btn ${activeButton === '1d' ? 'active' : ''}`}
+              onClick={() => handleClick('1d')}
+            >
               1d
             </button>
-            <button className='days-btn'>
+            <button
+              className={`days-btn ${activeButton === '3d' ? 'active' : ''}`}
+              onClick={() => handleClick('3d')}
+            >
               3d
             </button>
-            <button className='days-btn-span'>
-
+            <button
+              className={`days-btn ${activeButton === '1w' ? 'active' : ''}`}
+              onClick={() => handleClick('1w')}
+            >
               1w
             </button>
-            <button className='days-btn'>
+            <button
+              className={`days-btn ${activeButton === '1m' ? 'active' : ''}`}
+              onClick={() => handleClick('1m')}
+            >
               1m
             </button>
-            <button className='days-btn'>
+            <button
+              className={`days-btn ${activeButton === '6m' ? 'active' : ''}`}
+              onClick={() => handleClick('6m')}
+            >
               6m
             </button>
-            <button className='days-btn'>
+            <button
+              className={`days-btn ${activeButton === '1y' ? 'active' : ''}`}
+              onClick={() => handleClick('1y')}
+            >
               1y
             </button>
-            <button className='days-btn'>
+            <button
+              className={`days-btn ${activeButton === 'max' ? 'active' : ''}`}
+              onClick={() => handleClick('max')}
+            >
               max
             </button>
           </div>
 
         </div>
-
         <main>
           <Routes>
             <Route path="/chart" element={<ChartPage isFullScreen={isFullScreen} toggleFullScreen={toggleFullScreen} />} />

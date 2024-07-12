@@ -69,9 +69,10 @@
 .days-btn{
   background: none;
   border: none;
+  cursor: pointer;
 }
 
-.days-btn-span{
+.days-btn.active {
   background-color: rgb(102, 102, 213);
   color: white;
   padding: 5px;
@@ -79,4 +80,3 @@
   width: 2.8rem;
   border-radius: 5px;
 }
-
