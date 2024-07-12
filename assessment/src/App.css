@@ -44,4 +44,39 @@
 .chart-container {
   padding: 20px;
 }
+.fullScrn-btn{
+  cursor: pointer;
+  border: none;
+  background: none;
+  margin-left: 5px;
+  margin-bottom: 5px;
+  font-size: 13px;
+}
+
+
+.btn-container{
+  display: flex;
+}
+
+.days-select{
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.days-btn{
+  background: none;
+  border: none;
+}
+
+.days-btn-span{
+  background-color: rgb(102, 102, 213);
+  color: white;
+  padding: 5px;
+  border: none;
+  width: 2.8rem;
+  border-radius: 5px;
+}
 
